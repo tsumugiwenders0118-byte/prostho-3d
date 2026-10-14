@@ -45,9 +45,8 @@
 | 演示视频 ① | [▶ 点击播放](docs/demo-1.mp4) |
 | 演示视频 ② | [▶ 点击播放](docs/demo-2.mp4) |
 
-<video src="https://raw.githubusercontent.com/tsumugiwenders0118-byte/prostho-3d/main/docs/demo-1.mp4" controls width="720"></video>
-
-<video src="https://raw.githubusercontent.com/tsumugiwenders0118-byte/prostho-3d/main/docs/demo-2.mp4" controls width="720"></video>
+> 说明：GitHub 不支持从仓库文件直接内嵌播放，点击链接后会跳到 GitHub 自带的播放页面，可在线播放或下载；
+> 也可以把 `docs/demo-1.mp4`、`docs/demo-2.mp4` 下载到本地离线观看。
 
 ---
 
