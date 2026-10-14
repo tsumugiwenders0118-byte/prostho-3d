@@ -1,0 +1,16 @@
+# Node dependencies (third-party libs are vendored in ./vendor instead)
+node_modules/
+
+# Agent / browser test tooling
+.agents/
+.playwright-cli/
+
+# Build logs and local screenshots
+*.log
+shot-*.png
+screen*.png
+
+# Local backups (not part of the project)
+prosthoviz_non.html
+*_backup.html
+*.bak

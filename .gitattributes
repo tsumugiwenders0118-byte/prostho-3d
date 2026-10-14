@@ -1,0 +1,10 @@
+# Normalize line endings across platforms
+* text=auto
+
+# Binary assets
+*.png binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
