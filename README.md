@@ -11,7 +11,9 @@
 
 **普通使用者只需下载 [`prosthoviz_offline.html`](prosthoviz_offline.html) 这一个文件即可。**
 
-1. 在本仓库中点击 `prosthoviz_offline.html`；
+👉 直达下载页：<https://github.com/tsumugiwenders0118-byte/prostho-3d/blob/main/prosthoviz_offline.html>
+
+1. 打开上面的链接（或在本仓库中点击 `prosthoviz_offline.html`）；
 2. 点击文件页面右上角的 **`Download raw file`（下载原始文件）** 按钮；
    （或者直接点仓库右上角 `Code → Download ZIP`，下载后解压，只留这一个文件也行）
 3. 双击该文件，用 **Chrome / Edge** 打开，即开即用。
@@ -35,8 +37,10 @@
 3. 等 1 分钟后，手机浏览器打开：
 
    ```
-   https://<你的用户名>.github.io/<仓库名>/prosthoviz_offline.html
+   https://tsumugiwenders0118-byte.github.io/prostho-3d/prosthoviz_offline.html
    ```
+
+   （如果你 fork 了本仓库，把地址里的用户名 / 仓库名换成你自己的即可。）
 
 （把它发到微信里，别人点开就能看。）
 
