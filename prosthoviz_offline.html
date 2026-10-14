@@ -3371,7 +3371,9 @@
         function closeHazardFloatingBanner() {
             const banner = document.getElementById('hazard-floating-banner');
             const reopenBtn = document.getElementById('btn-reopen-hazard-banner');
+            const descBox = document.getElementById('hazard-desc-box');
             if (banner) banner.classList.add('hidden');
+            if (descBox) descBox.classList.add('hidden');
             if (reopenBtn && (currentMainMode === 'cantilever_hazard' || currentMainMode === 'unrestored_hazard')) {
                 reopenBtn.classList.remove('hidden');
             }
@@ -3380,7 +3382,9 @@
         function reopenHazardFloatingBanner() {
             const banner = document.getElementById('hazard-floating-banner');
             const reopenBtn = document.getElementById('btn-reopen-hazard-banner');
+            const descBox = document.getElementById('hazard-desc-box');
             if (banner) banner.classList.remove('hidden');
+            if (descBox) descBox.classList.remove('hidden');
             if (reopenBtn) reopenBtn.classList.add('hidden');
         }
 
@@ -3423,31 +3427,28 @@
                     ? 'cad-btn w-full py-1.5 px-2.5 rounded-xl text-[11px] font-extrabold bg-amber-600 text-slate-950 border border-amber-300 shadow flex items-center justify-between'
                     : 'cad-btn w-full py-1.5 px-2.5 rounded-xl text-[11px] font-bold bg-amber-950/80 hover:bg-amber-900 text-amber-200 border border-amber-500/40 flex items-center justify-between';
             }
+            const isHazardMode = (mode === 'unrestored_hazard' || mode === 'cantilever_hazard');
             if (descBox) {
+                // 文字说明默认关闭：只预填内容，不自动展开
                 if (mode === 'unrestored_hazard') {
-                    descBox.classList.remove('hidden');
                     descBox.innerHTML = `<b class="text-rose-300">【缺牙长期不镶危害】</b><br>① <b>邻牙倾倒</b>：35、37牙冠向36缺隙倾斜，破坏邻接导致塞牙与继发龋；<br>② <b>对颌伸长</b>：对颌26无咬合拮抗缓慢伸长；<br>③ <b>骨吸收</b>：缺牙区牙槽骨缺乏生理刺激进行性萎缩。`;
                 } else if (mode === 'cantilever_hazard') {
-                    descBox.classList.remove('hidden');
                     descBox.innerHTML = `<b class="text-amber-300">【游离端单端固定桥临床危害】</b><br>36、37游离端缺失仅磨35（5号牙）做单端固定桥时，戴桥后6、7承受咬合力会产生<b>远中悬臂杠杆力矩</b>，引起<b>5号基牙向远中倾斜、牙周组织创伤红肿、牙槽骨吸收及基牙松动</b>。`;
-                } else {
-                    descBox.classList.add('hidden');
                 }
+                descBox.classList.add('hidden');
             }
-            if (reopenBtn) reopenBtn.classList.add('hidden');
             if (bannerEl && bannerTitle && bannerSub) {
+                // 文字说明默认关闭：只预填内容，不自动弹出
                 if (mode === 'cantilever_hazard') {
-                    bannerEl.classList.remove('hidden');
                     bannerTitle.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-amber-400"></i> 游离端单端固定桥危害演示（以 35 带 36、37）`;
                     bannerSub.innerHTML = `<span class="text-amber-300 font-bold">【动画流程】</span>第②步先完成 <b>35 基牙预备并戴入单端固定桥</b>；第③~④步展示 <b>6、7 承受咬合力后的危害后果</b>：<br>由于 6、7 远中无基牙支撑，咬合力形成强烈的<b>悬臂杠杆力矩</b>，迫使 <b>5 号基牙向远中倾斜、牙周膜创伤红肿、5 号牙颈部及 6、7 下方牙槽骨受压吸收，最终导致基牙松动脱落</b>。`;
                 } else if (mode === 'unrestored_hazard') {
-                    bannerEl.classList.remove('hidden');
                     bannerTitle.innerHTML = `<i class="fa-solid fa-circle-exclamation text-rose-400"></i> 长期缺牙不修复并发症演示（36 缺失）`;
                     bannerSub.innerHTML = `<span class="text-rose-300 font-bold">【临床危害】</span>① <b>邻牙向缺隙倾斜</b>：两侧 35、37 牙冠向 36 缺牙间隙倾斜，引起食物嵌塞与邻面龋；<br>② <b>对颌牙伸长</b>：上颌对颌 26 失去咬合阻力向下伸长，干扰咬合运动；<br>③ <b>牙槽骨萎缩</b>：36 缺牙区牙槽骨发生废用性吸收，增加后期种牙/镶牙难度。`;
-                } else {
-                    bannerEl.classList.add('hidden');
                 }
+                bannerEl.classList.add('hidden');
             }
+            if (reopenBtn) reopenBtn.classList.toggle('hidden', !isHazardMode);
 
             document.getElementById('custom-dock').classList.toggle('hidden', mode !== 'custom');
             const customLeftCard = document.getElementById('custom-left-card');
